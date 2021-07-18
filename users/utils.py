@@ -3,6 +3,7 @@ import requests
 import json
 from .models import Profile
 import logging
+from django.conf import settings
 
 logger = logging.getLogger(__name__)
 
@@ -12,8 +13,8 @@ def get_location():
     return json.load(response)['city']
 
 def weather(city):
-    url = "http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=bcd280d6f83f1d32efee8a980ceaccc9"
-    data = requests.get(url.format(city)).json()
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={settings.WEATHER_API_KEY}"
+    data = requests.get(url).json()
     if 'main' in data:
         city_weather = {
             'temp': data['main']['temp'],
