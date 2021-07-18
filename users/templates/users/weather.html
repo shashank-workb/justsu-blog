@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Today's Weather
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div class="card shadow p-3 mb-5 bg-white rounded">
+    <div class="class-body">
+        {% if 'icon' in city_weather %}
+        <figure class="figure-img img-fluid rounded">
+            <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" width="60" height="70">
+        </figure>
+        {% endif %}
+        <h5 class="card-title" style="color:#3153cc">
+            {{ city_weather.city }}<br>
+        </h5>
+        <p class="card-text"><b>
+            {{ city_weather.temp }} &#8451</b></p>
+        <p> {{ city_weather.desc }}</p>
+        <small class="text-muted">Last Update -- {{city_weather.date}}</small>
+        <div style='float:right'>
+            <a class="btn btn-outline-primary" href="{% url 'update_weather' %}">Update</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

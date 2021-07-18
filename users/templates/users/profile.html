@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <div class="media">
+        <img class="rounded-circle account-img" src="{{ loggedin.profile.image.url }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ loggedin.username }}</h2>
+            <p class="text-secondary">{{ loggedin.email }}</p>
+            <p class="text-secondary">{{ loggedin.profile.location }}</p>
+            <a class="mr-2" href="{% url 'user-posts' loggedin.username %}">All {{loggedin.username}} Posts</a>
+        </div>
+        </div>
+        {% if user.username == loggedin.username%}
+        <form method="POST" action="{% url 'profile' user.username %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+                {{ l_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+                <div style="float: right;">
+                    <div class="dropdown">
+                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="{% url 'password_change' %}">Reset Password</a>
+                          <!--<a class="dropdown-item" href=#>Delete Account</a>-->
+                        </div>
+                        <a class="btn btn-secondary" href="{% url 'logout' %}">Logout</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+        
+        {% endif %}
+    </div>
+{% endblock content %}
