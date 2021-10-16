@@ -1,0 +1,32 @@
+version: '3.9'
+ 
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:8000
+    command: >
+      sh -c "ls -lrt &&
+             python3 manage.py migrate &&
+             python3 manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_DB=djangoproject
+      - POSTGRES_USER=mshashank
+      - POSTGRES_PASSWORD=3Svefng#
+      - POSTGRES_HOST=postgres
+  postgres:
+    image: postgres:11
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-d", "djangoproject", "-U", "mshashank"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    ports:
+      - 5432:5432
+  redis:
+    image: redis
+    

@@ -26,7 +26,7 @@ SECRET_KEY = '@$ak^ctq58-*0&s1w(=%lk$i4!5=97l=vi82!_-4gr36ff-h5g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoproject',
-        'USER': 'mshashank',
-        'PASSWORD': '3Svefng#',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': os.environ.get('POSTGRES_DB','djangoproject'),
+        'USER': os.environ.get('POSTGRES_USER','mshashank'),
+        'PASSWORD': os.environ.get('POSTGRES_PASS','3Svefng#'),
+        'HOST': os.environ.get('POSTGRES_HOST','localhost'),
+        'PORT': 5432,
     }
 }
 
@@ -164,6 +164,6 @@ CELERY_TIMEZONE = 'UTC'
 WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY')
 
 try:
-    from local_settings import *
-except ImportError:
+    from .local_settings import *
+except ImportError as E:
     pass
