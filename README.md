@@ -8,6 +8,7 @@ This is a generic blog app, name being used is domain name I have kept for perso
 
 # 🔗 Links
 Hi, I'm Shashank Mishra! 👋
+
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://conceptguitar.in/about/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mshashank-work/)
 
