@@ -71,6 +71,10 @@ Hi, I'm Shashank Mishra! 👋
 There are two apps involved in the project, along with 3 tables in the DB
 
 
+![Blank diagram](https://user-images.githubusercontent.com/64981954/143776306-2557306c-1f4c-42a6-9d20-ed2f236cd99d.jpeg)
+
+![ERD with colored entities (UML notation)](https://user-images.githubusercontent.com/64981954/143776314-0fa2fe7c-642e-4f58-ac4a-b2f264a1fa68.jpeg)
+
 
 
 # Feedback
