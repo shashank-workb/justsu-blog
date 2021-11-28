@@ -106,6 +106,8 @@ There are two apps involved in the project, along with 3 tables in the DB
 
 - Understand and add custom Middleware
 
+- Explore use of more async parts
+
 - Payments
 
 
