@@ -22,6 +22,6 @@ def debug_task(self):
 app.conf.beat_schedule = {
     'update_weather': {
         'task': 'users.tasks.update_weather_data',
-        'schedule':  crontab(minute='0')
+        'schedule':  crontab(minute='1')
     }
 }
