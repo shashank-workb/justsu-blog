@@ -76,9 +76,42 @@ There are two apps involved in the project, along with 3 tables in the DB
 ![ERD with colored entities (UML notation)](https://user-images.githubusercontent.com/64981954/143776314-0fa2fe7c-642e-4f58-ac4a-b2f264a1fa68.jpeg)
 
 
+## Future Enhancements
 
-# Feedback
+- Migrate whole project to another AWS EC2 instance with DB retention
 
-If you have any feedback, please reach out to me at
+- Search functionality 
+
+- Chat
+
+- Rectify location tracking
+
+- Refactor code to use CBV only
+
+- Add security features
+
+- Load test
+
+- Dockerize and deploy
+
+- Frontend (js/vue*), responsive site
+
+- Notifications and like functionality
+
+- Expose consumable REST-API using DRF
+
+- Use dedicated services(S3 for images, CDN for serving static files, RDS for DB ....)
+
+- Increase and establish proper logging
+
+- Understand and add custom Middleware
+
+- Payments
+
+
+
+# Suggestions and Feedback
+
+If you have any feedback or suggestions, please reach out to me at
 - shashank.workb@gmail.com
 - https://www.linkedin.com/in/mshashank-work/
