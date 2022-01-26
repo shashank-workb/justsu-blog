@@ -78,8 +78,6 @@ There are two apps involved in the project, along with 3 tables in the DB
 
 ## Future Enhancements
 
-- Migrate whole project to another AWS EC2 instance with DB retention
-
 - Search functionality 
 
 - Chat
