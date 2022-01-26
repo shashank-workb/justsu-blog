@@ -14,12 +14,17 @@ services:
     depends_on:
       - postgres
     environment:
-      - POSTGRES_DB=djangoproject
-      - POSTGRES_USER=mshashank
-      - POSTGRES_PASSWORD=3Svefng#
-      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASS=${POSTGRES_PASS}
+      - POSTGRES_HOST=${POSTGRES_HOST}
   postgres:
     image: postgres:11
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASS}
+      - POSTGRES_HOST=${POSTGRES_HOST}
     healthcheck:
       test: ["CMD", "pg_isready", "-q", "-d", "djangoproject", "-U", "mshashank"]
       interval: 5s
